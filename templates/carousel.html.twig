@@ -1,0 +1,104 @@
+<!-- variable globale app.request - parent ou included slides-banners.twig.thml -->
+    {% if app.request.attributes.get('_route') == 'home' %}
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
+  margin-top:-138px;">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active soft-bg" style="background-image: url('{{ asset('images/carousel/slider1.jpg') }}')">
+                    <div class="carousel-caption">
+                        <div class="row m-5">
+                            <div class="col-3">
+                                <div class="bg-dark rounded-circle d-flex align-items-center" style="min-height:180px;min-width:180px;opacity: 0.8">
+                                    <div>
+                                        <h6>NOTRE CREDO</h6>
+                                        <p><small>Faciliter la vie dans la ville et dans l'entreprise.
+                                            </small></p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="bg-danger rounded-circle d-flex align-items-center text-center" style="min-height:180px;min-width:180px;opacity: 0.8">
+                                    <div>
+                                        <h6>NOTRE FORCE</h6>
+                                        <p><small>Savoir rentrer chez les gens, (re)nouer le contact
+                                                informer, sensibiliser</small></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="bg-dark rounded-circle d-flex align-items-center" style="min-height:180px;min-width:180px;opacity: 0.8">
+                                    <div>
+                                        <h6>NOS ATOUTS</h6>
+                                        <p><small>Réactivité, Professionnalisme, Polyvalence</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="bg-dark rounded-circle d-flex align-items-center" style="min-height:180px;min-width:180px;opacity: 0.8">
+                                    <div class="text-center">
+                                        <h6>NOS VALEURS</h6>
+                                        <p><small>Réactivité, Professionnalisme, Polyvalence</small></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h1>Acteur de l’insertion sociale et professionnelle par l’activité économique.</h1>
+                        <p class="lead">Accompagner nos salariés dans une dynamique de retour à l'emploi.</p>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item soft-bg" style="background-image: url('{{ asset('images/carousel/slider1.jpg') }}')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Prestataire de services urbains de proximité aux collectivités et aux entreprises</h1>
+                        <p class="lead">Notre Credo : Faciliter la vie dans la ville et dans l'entreprise.</p>
+                        <p><a class="btn btn-dark rounded-0 text-uppercase" href="" role="button"><small>En savoir plus &raquo;</small></a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item soft-bg" style="background-image: url('{{ asset('images/carousel/slider1.jpg') }}')">
+                    <div class="carousel-caption ">
+                        <h1>RÉseau Citoyen des PROfessionnels de la CITÉ</h1>
+                        <p class="lead">Contribuer à réduire l'exclusion et créer du lien social</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    {% elseif app.request.attributes.get('_route') == 'blog' %}
+        <div class="jumbotron text-white bg-secondary">
+            <div class="container">
+                <div class="col-md-6 px-0">
+                    {% if title is defined %}<h1 class="text-uppercase font-italic ">{{ title }}! </h1>{% else %}{% endif %}
+                    <p class="lead my-3">Liste des articles du blog Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+                    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Lire la suite...</a></p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="jumbotron text-white bg-secondary rounded-0 mb-0">
+            <div class="container text-center">
+                {% if title is defined %}<h1 class="text-uppercase">{{ title }}</h1>{% else %}{% endif %}
+                {% if subtitle is defined %}<h2>{{ subtitle }} </h2>{% else %}{% endif %}
+
+            </div>
+        </div>
+    {% endif %}
+    <!-- end slides-banners -->

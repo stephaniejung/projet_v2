@@ -1,0 +1,64 @@
+
+$primary: #cf112d;
+$success: #94bf0e;
+$danger: #cf112d;
+$light: #ebeced;
+
+// Example usage:
+
+// Medium devices (tablets, less than 992px)
+.home-desc-right {
+  text-align: right;
+}
+@media (max-width: 991.98px) {
+  .home-desc {
+    text-align: center !important;
+  }
+  .home-desc-right {
+    text-align: center !important;
+  }
+}
+// Small devices (landscape phones, less than 768px)
+//@media (max-width: 767.98px) {
+//  .home-desc {
+//    text-align: center;
+//  }
+//}
+
+
+
+
+.dropdown {
+  .dropdown-menu {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
+//tests form file type
+.card-img-right {
+  height: 100%;
+  width:50%;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+  .h-md-250 { height: 250px; }
+}
+
+// the ~ 2 you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+// the ~ allows you to reference things in node_modules
+@import "full-slider.css";
+@import "carousel.css";
